@@ -1,0 +1,72 @@
+.HeaderMainContainer{
+    width: 100vw;
+    height: 10vh;
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sideheader{
+width: 10%;
+height: 70%;
+/* border: solid blue; */
+display: flex;
+align-items: center;
+}
+.keepLogo{
+    /* border: solid blue; */
+    height: 40px;
+}
+.keep{
+ font-size: 20px;
+ font-weight: bold;
+ color:#5f6368;
+ /* border: solid green; */
+}
+.emptybox1{
+    /* border: solid pink; */
+    width: 8%;
+}
+
+.middleheader{
+width: 58%;
+height: 75%;
+/* border: solid green;   */
+display: flex;
+align-items: center;
+justify-content: flex-start;
+/* border: solid gray; */
+border-radius: 10px;
+background-color:#f1f3f4;
+}
+
+.input{
+ color:#5f6368;
+ font-family:Helvetica,Arial,sans-serif;
+}
+.rightsideheader{
+width: 30%;
+height: 70%;
+/* border: solid blue;  */
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+
+}
+.rightSideOne{
+    /* border: solid green; */
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+.emptybox{
+    /* border: solid green; */
+    width: 10%;
+}
+.rightSideTwo{
+    width: 20%;
+    height: 95%;
+    /* border: solid red; */
+    display: flex;
+}
