@@ -8,26 +8,41 @@ import PushPinOutlinedIcon from '@mui/icons-material/PushPinOutlined';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAlt1OutlinedIcon from '@mui/icons-material/PersonAddAlt1Outlined';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
-import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import { NoteArchieveApi } from '../../services/DataServices';
+import { NoteTrashApi } from '../../services/DataServices';
 
 export default function TakeNote3(props) {
 
     const NoteArchieve = (id) => {
         let nId = {
-          "noteID": id
+            "noteID": id
         }
-    
+
         NoteArchieveApi(nId)
-          .then(res => {
-            console.log(res)
-          })
-          .catch(err => {
-            console.log(err)
-          })
-      }
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    const NoteTrash = (id) => {
+        let nId = {
+            "noteID": id
+        }
+
+        NoteTrashApi(nId)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
 
     return (
@@ -44,29 +59,29 @@ export default function TakeNote3(props) {
                         </Box>
                         <div className='pinicon2'>
                             <Tooltip>
-                                <IconButton> <PushPinOutlinedIcon /> </IconButton>
+                                <IconButton> <PushPinOutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                             </Tooltip>
                         </div>
                     </Box>
 
                     <Box className="icons3">
                         <Tooltip title='Remind me'>
-                            <IconButton><AddAlertOutlinedIcon /> </IconButton>
+                            <IconButton><AddAlertOutlinedIcon style={{ color: '#202124' }} fontSize="small" /> </IconButton>
                         </Tooltip>
                         <Tooltip title='Collabrator'>
-                            <IconButton> <PersonAddAlt1OutlinedIcon /> </IconButton>
+                            <IconButton> <PersonAddAlt1OutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                         </Tooltip>
-                        <Tooltip title='color'>
-                            <IconButton> <ColorLensIcon /> </IconButton>
+                        <Tooltip title='Color'>
+                            <IconButton> <ColorLensIcon style={{ color: '#202124' }} fontSize="small" /> </IconButton>
                         </Tooltip>
-                        <Tooltip title='Image'>
-                            <IconButton> <ImageOutlinedIcon /> </IconButton>
+                        <Tooltip title='Delete'>
+                            <IconButton><DeleteIcon onClick={() => NoteTrash(props.note.noteID)} style={{ color: '#202124' }} fontSize="small" /></IconButton>
                         </Tooltip>
                         <Tooltip title='Archive'>
-                            <IconButton> <ArchiveOutlinedIcon  onClick={() => NoteArchieve(props.note.noteID)} /> </IconButton>
+                            <IconButton> <ArchiveOutlinedIcon onClick={() => NoteArchieve(props.note.noteID)} style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                         </Tooltip>
                         <Tooltip title='More'>
-                            <IconButton> <MoreVertOutlinedIcon /> </IconButton>
+                            <IconButton> <MoreVertOutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                         </Tooltip>
                     </Box>
                 </Paper>
