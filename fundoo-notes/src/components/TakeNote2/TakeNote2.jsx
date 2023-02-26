@@ -12,43 +12,63 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import IconButton from '@mui/material/IconButton';
-
+import { createNewNoteApi } from '../../services/DataServices';
 
 function TakeNote2(props) {
+    const [noteData, setNoteData] = useState({ title: '', description: '' });
     const Submit = () => {
         props.closeNote()
+
+        if (noteData.title || noteData.note) {
+            console.log("Api call for create note")
+            createNewNoteApi(noteData)
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+        }
     }
 
-  return (
-    <div className="note2maincontainer">
-        <div className="title">
-            <div className="input">
-                <InputBase placeholder='Title'  />
+    const TakeNote2Title = (e) => {
+        setNoteData(preState => ({ ...preState, title: e.target.value }))
+    }
+
+    const TakeNote2Description = (e) => {
+        setNoteData(preState => ({ ...preState, description: e.target.value }))
+    }
+
+    return (
+        <div className="note2maincontainer">
+            <div className="title">
+                <div className="input">
+                    <InputBase onChange={TakeNote2Title} placeholder='Title' />
+                </div>
+                <div className="labelicon">
+                    <PushPinOutlinedIcon />
+                </div>
             </div>
-            <div className="labelicon">
-            <PushPinOutlinedIcon/>
+            <div className="takenote2">
+                <InputBase onChange={TakeNote2Description} placeholder='Take a note...' />
+            </div>
+            <div className="bottomicon">
+                <div className="note2icon">
+                    <IconButton> <AddAlertOutlinedIcon style={{ color: '#202124' }} fontSize="small" /> </IconButton>
+                    <IconButton> <PersonAddAltOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <ColorLensOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <AddPhotoAlternateOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <ArchiveOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <MoreVertOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <UndoOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                    <IconButton> <RedoOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
+                </div>
+                <div className="icontext">
+                    <Button onClick={Submit} sx={{ textTransform: 'none' }} style={{ color: "#202124" }}  >Close</Button>
+                </div>
             </div>
         </div>
-        <div className="takenote2">
-        <InputBase placeholder='Take a note...' />
-        </div>
-        <div className="bottomicon">
-            <div className="note2icon">
-            <IconButton> <AddAlertOutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
-            <IconButton> <PersonAddAltOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
-            <IconButton> <ColorLensOutlinedIcon style={{ color: "#202124" }} fontSize="small"/> </IconButton>
-            <IconButton> <AddPhotoAlternateOutlinedIcon  style={{ color: "#202124" }} fontSize="small" /> </IconButton>
-            <IconButton> <ArchiveOutlinedIcon  style={{ color: "#202124" }} fontSize="small"/> </IconButton>
-            <IconButton> <MoreVertOutlinedIcon  style={{ color: "#202124" }} fontSize="small"/> </IconButton>
-            <IconButton> <UndoOutlinedIcon  style={{ color: "#202124" }} fontSize="small"/> </IconButton>
-            <IconButton> <RedoOutlinedIcon  style={{ color: "#202124" }} fontSize="small"/> </IconButton>
-            </div>
-            <div className="icontext">
-                <Button onClick={Submit} sx={{ textTransform: 'none' }} style={{ color: "#202124"}}  >Close</Button>
-            </div>
-        </div>
-    </div>
-  )
+    )
 }
 
 export default TakeNote2
