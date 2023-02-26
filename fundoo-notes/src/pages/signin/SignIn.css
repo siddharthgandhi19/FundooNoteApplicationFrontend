@@ -1,0 +1,197 @@
+.body{
+    width: 100vw;
+    height: 110vh;
+    /* border :solid red; */
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInFormBody{
+    width: 33vw;
+    height: 83vh;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;    
+    /* border: solid red; */
+}
+.signInLogo{
+    width: 100%;
+    height: 12%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    font-weight: bold;
+    font-size: 22px;
+}
+.f{
+    color: #4285F4;
+}
+.u{
+    color:#DB4437
+}
+.n{
+   color: #F4B400
+}
+.d{
+    color: #4285F4;
+}
+.o{
+  color:  #0F9D58;
+}
+.a{
+    color:#DB4437;
+}
+.signinBox{
+    width: 100%;
+    height: 10%;
+    /* border: solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-family: sans-serif;
+    /* font-weight: bold; */
+}
+
+.signInUserLine{
+    width: 100%;
+    height: 6%;
+    /* border: solid red;
+    display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.signInInputBox{
+    width: 100%;
+    height: 25%;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+.signInInputEmail{
+    width: 350px;
+    height: 50px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    border: solid blue;
+    font-size: 16px;
+}
+.signInInputPassword{
+    width: 350px;
+    height: 50px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    /* border: solid green; */
+    font-size: 16px;
+}
+.signInForgotBox{
+    width: 350px;
+    height: 5%;
+    /* border: solid black; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 35px;
+
+}
+.signInForgotEmail{
+    width: 50%;
+    height: 100%;
+    /* border: solid green; */
+    font-size: 14px;
+    font-weight: bold;
+    color:#4285F4;
+}
+.signInForgotPassword{
+    width: 50%;
+    height: 100%;
+    /* border: solid green; */
+    font-size: 14px;
+    font-weight: bold;
+    color:#4285F4;
+    margin-left: 105px;
+}
+.bottomTextLine{
+    width: 80%;
+    height: 5%;
+    /* border: solid red; */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 35px;
+    color : gray;
+}
+.bottomTextLine2{
+    width: 20%;
+    height: 5%;
+    /* border: solid green; */
+    font-size: 14px;
+    font-weight: bold;
+    color:#4285F4;
+    margin-left: 45px;
+}
+.CreateAccountLogin{
+    width: 85%;
+    height: 10%;
+    /* border: solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.CreateAccountLink{
+    width: 30%;
+    height: 50%;
+    /* border: solid green; */
+    font-size: 14px;
+    font-weight: bold;
+    color:#4285F4;    
+    margin-top: 5px;
+    margin-left: 30px;
+}
+.LoginButton{
+    width: 20%;
+    height: 70%;
+    border: solid #4285F4;
+    border-radius: 5px;
+    background-color: #4285F4;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+}
+.signInFooter{
+    width: 33vw;
+    height: 10vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+}
+.signInLanguage{
+    width: 40%;
+    height: 70%;
+    border:solid white;
+    background-color: transparent;
+
+}
+.signInFooterContent{
+    width: 60%;
+    height: 70%;
+    /* border:solid green; */
+    font-size: 14px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
