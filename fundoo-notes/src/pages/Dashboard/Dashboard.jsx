@@ -9,6 +9,8 @@ function Dashboard() {
 
     const [toggle, setToggle] = useState(true);
     const [DataList, setDataList] = useState([])
+
+
     const openNote = () => {
         setToggle(false)
     }
@@ -17,7 +19,7 @@ function Dashboard() {
         setToggle(true)
     }
 
-    useEffect(() => {
+    const getListMethod = () => {
         getListApi()
             .then(response => {
                 console.log(response)
@@ -26,22 +28,29 @@ function Dashboard() {
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    const autoRefresh = () => {
+        getListMethod()
+    }
+
+    useEffect(() => {
+        getListMethod()
     }, [])
     console.log(DataList)
-
 
     return (
 
         <div>
             <Header />
             {
-                toggle ? <TakeNote1 openNote={openNote} /> : <TakeNote2 closeNote={closeNote} />
+                toggle ? <TakeNote1 openNote={openNote} /> : <TakeNote2 closeNote={closeNote} autoRefresh={autoRefresh} />
             }
 
             <div style={{ width: '70%', height: '100%', display: 'flex', flexWrap: 'wrap', position:'relative' , top:'75px', left: '250px' , gap:'20px'}}>
                 {
                     DataList.map(note => (
-                        <TakeNote3 note={note} />
+                        <TakeNote3 note={note}  autoRefresh={autoRefresh}/>
                     ))
                 }
             </div>
