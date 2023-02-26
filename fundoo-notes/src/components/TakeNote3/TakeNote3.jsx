@@ -11,8 +11,24 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+import { NoteArchieveApi } from '../../services/DataServices';
 
 export default function TakeNote3(props) {
+
+    const NoteArchieve = (id) => {
+        let nId = {
+          "noteID": id
+        }
+    
+        NoteArchieveApi(nId)
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+
 
     return (
 
@@ -47,7 +63,7 @@ export default function TakeNote3(props) {
                             <IconButton> <ImageOutlinedIcon /> </IconButton>
                         </Tooltip>
                         <Tooltip title='Archive'>
-                            <IconButton> <ArchiveOutlinedIcon /> </IconButton>
+                            <IconButton> <ArchiveOutlinedIcon  onClick={() => NoteArchieve(props.note.noteID)} /> </IconButton>
                         </Tooltip>
                         <Tooltip title='More'>
                             <IconButton> <MoreVertOutlinedIcon /> </IconButton>
