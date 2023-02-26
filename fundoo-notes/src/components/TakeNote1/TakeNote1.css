@@ -1,0 +1,31 @@
+.noteonemaincontainer{
+    width: 45vw;
+    height: 7.5vh;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px 2px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    left: 425px;
+    top: 30px;
+}
+.takenote{
+    width: 65%;
+    height: 90%;
+    /* border: solid green; */
+    font-weight: 400;
+    font-family: Roboto,Arial,sans-serif;
+    display: flex;
+    align-self: flex-start;
+}
+.sidenavigation{
+    width: 25%;
+    height: 90%;
+    /* border: solid blue; */
+    display: flex;
+    justify-content: space-between;
+}
