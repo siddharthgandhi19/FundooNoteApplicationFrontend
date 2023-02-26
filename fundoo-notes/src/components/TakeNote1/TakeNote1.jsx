@@ -6,19 +6,20 @@ import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import { InputBase } from '@mui/material';
 
+function TakeNote1(props) {
 
-function TakeNote1() {
+    const Submit = () => {
+        props.openNote()
+    }
 
-    
-              
     return (
-        <div  className="noteonemaincontainer">
+        <div onClick={Submit} className="noteonemaincontainer">
             <div className="takenote">
                 <InputBase placeholder='Take a note...' /></div>
             <div className="sidenavigation">
                 <IconButton> <CheckBoxOutlinedIcon /> </IconButton>
                 <IconButton> <BrushOutlinedIcon /> </IconButton>
-                <IconButton> <ImageOutlinedIcon /> </IconButton> 
+                <IconButton> <ImageOutlinedIcon /> </IconButton>
             </div>
         </div>
     )

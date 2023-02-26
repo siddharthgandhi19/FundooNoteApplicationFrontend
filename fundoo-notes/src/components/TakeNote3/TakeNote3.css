@@ -16,13 +16,13 @@
 .note3 {
     width: 20vw;
     height: 24vh;
-    border: solid red;
+    /* border: solid red; */
 }
 .noteicon2 {
     display: flex;
     flex-direction: row;
     height: 17vh;
-    border: solid blue;
+    /* border: solid blue; */
 
 }
 .txt2 {
@@ -32,18 +32,18 @@
     text-align: start;
     padding-left: 10px;
     padding-top: 10px;
-    border: solid green;
+    /* border: solid green; */
 }
 .input3 {
     display: flex;
     flex-direction: column;
     height: 5vh;
     width: 15vw;
-    border: solid yellow;
+    /* border: solid yellow; */
 }
 .icons3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: solid green;
+    /* border: solid green; */
 }

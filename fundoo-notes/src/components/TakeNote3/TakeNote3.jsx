@@ -12,33 +12,33 @@ import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
-export default function TakeNote3() {
+export default function TakeNote3(props) {
 
-  return (
+    return (
 
-  <div>
-        <Box className='container3'>
-            <Paper className='note3'>
-                <Box className='noteicon2'>
-                    <Box className='txt2'>
-                    <span className='input3'>Title</span>
-                    <span className='input3'>Description</span>
-                        {/* <InputBase className='input3' placeholder="Title.."/>
+        <div>
+            <Box className='container3'>
+                <Paper className='note3'>
+                    <Box className='noteicon2'>
+                        <Box className='txt2'>
+                            <span className='input3'> {props.note.title}</span>
+                            <span className='input3'>  {props.note.description}</span>
+                            {/* <InputBase className='input3' placeholder="Title.."/>
                         <InputBase className='input3' placeholder="Take a note..." /> */}
+                        </Box>
+                        <div className='pinicon2'>
+                            <Tooltip>
+                                <IconButton> <PushPinOutlinedIcon /> </IconButton>
+                            </Tooltip>
+                        </div>
                     </Box>
-                    <div className='pinicon2'>
-                        <Tooltip>
-                            <IconButton> <PushPinOutlinedIcon/> </IconButton>
-                        </Tooltip>
-                    </div>
-                </Box>
 
-                <Box className="icons3">
-                       <Tooltip title='Remind me'>
-                        <IconButton><AddAlertOutlinedIcon /> </IconButton>
-                        </Tooltip> 
+                    <Box className="icons3">
+                        <Tooltip title='Remind me'>
+                            <IconButton><AddAlertOutlinedIcon /> </IconButton>
+                        </Tooltip>
                         <Tooltip title='Collabrator'>
-                            <IconButton> <PersonAddAlt1OutlinedIcon/> </IconButton>
+                            <IconButton> <PersonAddAlt1OutlinedIcon /> </IconButton>
                         </Tooltip>
                         <Tooltip title='color'>
                             <IconButton> <ColorLensIcon /> </IconButton>
@@ -52,9 +52,9 @@ export default function TakeNote3() {
                         <Tooltip title='More'>
                             <IconButton> <MoreVertOutlinedIcon /> </IconButton>
                         </Tooltip>
-                </Box>
-            </Paper>
-        </Box>
-    </div>
-  );
+                    </Box>
+                </Paper>
+            </Box>
+        </div>
+    );
 }

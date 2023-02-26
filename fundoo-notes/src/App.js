@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import TakeNote1 from './components/TakeNote1/TakeNote1';
 import TakeNote2 from './components/TakeNote2/TakeNote2';
 import TakeNote3 from './components/TakeNote3/TakeNote3';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <Header/> */}
       {/* <TakeNote1/> */}
       {/* <TakeNote2/> */}
-      <TakeNote3 />
+      {/* <TakeNote3 /> */}
+      <Dashboard/>
     </div>
   );
 }
