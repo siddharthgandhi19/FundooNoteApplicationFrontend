@@ -1,0 +1,49 @@
+.container3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 0px solid black;
+    height: 23vh;
+    width: 20vw;
+    position: relative;
+    justify-content: center;
+    /* margin-right: 12px;
+    margin-bottom: 10px;
+    margin-top: 20px; */
+    box-shadow: 1px 1px 5px rgb(169, 158, 158);
+    /* border: solid red; */
+}
+.note3 {
+    width: 20vw;
+    height: 24vh;
+    border: solid red;
+}
+.noteicon2 {
+    display: flex;
+    flex-direction: row;
+    height: 17vh;
+    border: solid blue;
+
+}
+.txt2 {
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    text-align: start;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: solid green;
+}
+.input3 {
+    display: flex;
+    flex-direction: column;
+    height: 5vh;
+    width: 15vw;
+    border: solid yellow;
+}
+.icons3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid green;
+}
