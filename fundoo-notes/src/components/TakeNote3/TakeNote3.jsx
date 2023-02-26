@@ -13,6 +13,7 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import { NoteArchieveApi } from '../../services/DataServices';
 import { NoteTrashApi } from '../../services/DataServices';
+import { NotePinApi } from '../../services/DataServices';
 
 export default function TakeNote3(props) {
 
@@ -44,6 +45,20 @@ export default function TakeNote3(props) {
             })
     }
 
+    const NotePin = (id) => {
+        let nId = {
+          "noteID": id
+        }
+    
+        NotePinApi(nId)
+          .then(res => {
+            console.log(res)
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      }
+    
 
     return (
 
@@ -59,7 +74,7 @@ export default function TakeNote3(props) {
                         </Box>
                         <div className='pinicon2'>
                             <Tooltip>
-                                <IconButton> <PushPinOutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
+                                <IconButton> <PushPinOutlinedIcon onClick={() => NotePin(props.note.noteID)} style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                             </Tooltip>
                         </div>
                     </Box>

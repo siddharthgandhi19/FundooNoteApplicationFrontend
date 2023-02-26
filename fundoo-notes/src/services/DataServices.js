@@ -22,3 +22,7 @@ export const NoteTrashApi = (data) => {
     let response= axios.put(`${BaseUrl}/TrashNote`, data ,HeaderConfig)
     return response
 }
+export const NotePinApi = (data) => {
+    let response= axios.put(`${BaseUrl}/PinNote`, data ,HeaderConfig)
+    return response
+}
