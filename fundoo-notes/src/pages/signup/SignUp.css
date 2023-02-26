@@ -1,0 +1,227 @@
+.signUpMainContainer{
+    width: 100vw;
+    height: 110vh;
+    /* border :solid red;     */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.signUpMiddleSec{
+    width: 55vw;
+    height: 96vh;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    /* border: solid pink */
+}
+.signUpLeftContainer{
+       width: 60%;
+       height: 100%;
+       /* border: solid green; */
+}
+.signUpLogo{
+    width: 20%;
+    height: 5%;
+    /* border: solid red; */
+    margin-top: 50px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 22px;
+}
+.f{
+    color: #4285F4;
+}
+.u{
+    color:#DB4437
+}
+.n{
+   color: #F4B400
+}
+.d{
+    color: #4285F4;
+}
+.o{
+  color:  #0F9D58;
+}
+.a{
+    color:#DB4437;
+}
+.signOpTextCreateAccount{
+    width: 70%;
+    height: 8%;
+    /* border: solid red;  */
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin-left: 40px;
+}
+.signUpNameBox{
+    width: 100%;
+    height: 10%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-left: 35px;
+}
+.inputfirstname{
+    width: 90%;
+    height: 60%;
+    /* border: 1px solid #d3d3d3; */
+    border-radius: 5px;
+}
+.inputlastname{
+    width: 90%;
+    height: 60%;
+    /* border: 1px solid #d3d3d3; */
+    border-radius: 5px;
+}
+.email{
+    width: 90%;
+    height: 5.5%;
+    /* border: solid red ; */
+    
+    margin-left: 10px;
+}
+.inputemail{
+    width: 83%;
+    height: 100%;
+    /* border: 1px solid #d3d3d3; */
+    border-radius: 5px;
+    /* border: solid black; */
+}
+.message{
+    width: 50%;
+    height: 5%;
+    /* border: solid blue; */
+    font-size: 12px;
+    margin-left: 45px;
+    margin-top: 15px;
+    color : rgb(116, 115, 115);
+}
+.middlemessge{
+    width: 60%;
+    height: 5%;
+    font-size: 12px;
+    font-weight: bold;
+    color:#4285F4;
+    /* border: solid red; */
+    margin-left: 17px;
+}
+.passwordbox{
+    width: 85%;
+    height: 6%;
+    /* border: solid green; */
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 25px;
+
+}
+.password{
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid #d3d3d3; */
+    border-radius: 5px;
+}
+.confirm{
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid #d3d3d3; */
+    border-radius: 5px;
+}
+/* .bottommessage{
+    width: 70%;
+    height: 5%;
+    /* border: solid yellow; */
+    /* font-size: 12px;
+    margin-left: 40px;
+    margin-top: 7px;
+    color : rgb(116, 115, 115);
+    text-align: start;
+}  */
+.checkbox{
+    width: 40%;
+    height: 5%;
+    /* border: solid yellow; */
+    text-align: start;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+.signin{
+    width: 340px;
+    height: 10%;
+    /* border: solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 35px;
+    margin-top: 50px;
+}
+.signininstead{
+    width: 60%;
+    /* border: solid green; */
+    font-size: 14px;
+    font-weight: bold;
+    color:#4285F4;  
+    text-align: start;
+}
+.nextbutton1{
+    width: 100%;
+    height: 60%;
+    border: solid  #4285F4;
+    border-radius: 5px;
+    background-color: #4285F4;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+}
+.rightcontainer{
+       width: 40%;
+       height: 100%;
+       /* border: solid red; */
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+}
+.imagebox{
+    width: 80%;
+    /* border: solid blue; */
+    
+}
+.msg{
+    width: 75%;
+    height: 10%;
+    /* border: solid red; */
+    text-align: center;
+}
+.signupfooter{
+    width: 70vw;
+    height: 10vh;
+    /* border: solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    align-items: center;
+}
+.signuplanguage{
+    width: 20%;
+    height: 70%;
+    border:solid white;
+    background-color: transparent;
+
+}
+.signupfootercontent{
+    width: 60%;
+    height: 70%;
+    /* border:solid green; */
+    font-size: 14px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
