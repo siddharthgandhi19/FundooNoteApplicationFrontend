@@ -36,6 +36,7 @@ function ColorPopper(props) {
                         colors.map(color => (
                             <div style={{ width: 28, height: 28, border: '1 px solid red', borderRadius: 100, backgroundColor: color }} onClick={() => PickColor(color)}></div>
                         ))
+                        //iteration and holding the color from array
                     }
                 </Box>
             </Popper>

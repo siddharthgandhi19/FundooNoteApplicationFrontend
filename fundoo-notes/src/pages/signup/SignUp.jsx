@@ -191,7 +191,7 @@ function SignUp() {
                         </div>
                         <div className="signin">
                             {/* <a className="signininstead">Sign in instead</a> */}
-                            <Button onClick={() => ('/')} className="signininstead" variant="text" sx={{ textTransform: 'none' }}>Sign in instead</Button>
+                            <Button onClick={() => navigate('/')} className="signininstead" variant="text" sx={{ textTransform: 'none' }}>Sign in instead</Button>
                             <div className='next'>
                                 {/* <button className="nextbutton1">Next</button> */}
                                 <Button onClick={Submit} className="nextbutton1" variant="contained">Next</Button>
