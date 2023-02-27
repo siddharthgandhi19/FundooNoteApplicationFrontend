@@ -4,6 +4,7 @@ import Popper from '@mui/material/Popper';
 import IconButton from '@mui/material/IconButton';
 import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
 import { NoteColorApi } from "../../services/DataServices";
+import { positions } from "@mui/system";
 
 function ColorPopper(props) {
     const colors = ["#f28b82", "#fbbc04", "#fff475", "#ccff90", "#a7ffeb", "#cbf0f8", "#aecbfa", "#d7aefb", "#e8eaed", "#e6c9a8", "#fdcfe8"]
@@ -27,13 +28,13 @@ function ColorPopper(props) {
     return (
         <>
             <IconButton aria-describedby={id} type="button" onClick={handleClick}>
-                <PaletteOutlinedIcon fontSize="small" />
+                <PaletteOutlinedIcon style={{ color: "#202124" }} fontSize="small" />
             </IconButton>
             <Popper id={id} open={open} anchorEl={anchorEl}>
-                <Box sx={{ border: 1, p: 1, bgcolor: 'background.paper', width: 300, display: 'flex', justifyContent: 'space-between' }}>
+                <Box sx={{ border: 1, border: 'solid white', p: 1, borderRadius: '10px', bgcolor: 'background.paper', width:350, display: 'flex', justifyContent: 'space-between', position:'relative' , left:'180px' }}>
                     {
                         colors.map(color => (
-                            <div style={{ width: 25, height: 25, border: '1px solid red', borderRadius: 100, backgroundColor: color }} onClick={() => PickColor(color)}></div>
+                            <div style={{ width: 28, height: 28, border: '1 px solid red', borderRadius: 100, backgroundColor: color }} onClick={() => PickColor(color)}></div>
                         ))
                     }
                 </Box>

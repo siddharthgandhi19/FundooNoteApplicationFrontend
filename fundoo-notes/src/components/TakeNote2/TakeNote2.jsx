@@ -13,16 +13,9 @@ import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 import RedoOutlinedIcon from '@mui/icons-material/RedoOutlined';
 import IconButton from '@mui/material/IconButton';
 import { createNewNoteApi } from '../../services/DataServices';
-import ColorPopper from '../Colorpopper/Colorpopper';
 
 function TakeNote2(props) {
-
-    const [noteData, setNoteData] = useState({ title: '', description: '' , color:'#FFF'});
-
-
-    const [InputCardBoxColor , setInputCardBoxColor] = useState('')
-
-
+    const [noteData, setNoteData] = useState({ title: '', description: '' });
     const Submit = () => {
         props.closeNote()
 
@@ -47,14 +40,8 @@ function TakeNote2(props) {
         setNoteData(preState => ({ ...preState, description: e.target.value }))
     }
 
-    const listenToColorPopper1 = (popperColor) => {
-        setInputCardBoxColor(popperColor)
-        setNoteData(preState => ({ ...preState, color: popperColor}))
-
-    }
-
     return (
-        <div style={{backgroundColor:InputCardBoxColor}} className="note2maincontainer">
+        <div className="note2maincontainer">
             <div className="title">
                 <div className="input">
                     <InputBase onChange={TakeNote2Title} placeholder='Title' />
@@ -70,7 +57,7 @@ function TakeNote2(props) {
                 <div className="note2icon">
                     <IconButton> <AddAlertOutlinedIcon style={{ color: '#202124' }} fontSize="small" /> </IconButton>
                     <IconButton> <PersonAddAltOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
-                    <ColorPopper listenToColorPopper1 = {listenToColorPopper1} action="create"></ColorPopper>
+                    <IconButton> <ColorLensOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
                     <IconButton> <AddPhotoAlternateOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
                     <IconButton> <ArchiveOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
                     <IconButton> <MoreVertOutlinedIcon style={{ color: "#202124" }} fontSize="small" /> </IconButton>
