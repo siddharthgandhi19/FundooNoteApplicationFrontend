@@ -11,9 +11,10 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import { NoteArchieveApi } from '../../services/DataServices';
+import { NoteArchieveApi, NoteColorApi } from '../../services/DataServices';
 import { NoteTrashApi } from '../../services/DataServices';
 import { NotePinApi } from '../../services/DataServices';
+import ColorPopper from '../Colorpopper/Colorpopper';
 
 export default function TakeNote3(props) {
 
@@ -59,12 +60,29 @@ export default function TakeNote3(props) {
           })
       }
     
+      const listenToColorPopper2 = (color1) =>{
+
+        let nId = {
+            "noteID": props.note.noteID, "color":color1
+
+        }
+
+        NoteColorApi(nId)
+            .then(res => {
+                console.log(res)
+                props.autoRefresh()
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+      }
 
     return (
 
         <div>
             <Box className='container3'>
-                <Paper className='note3'>
+                <Paper style={{backgroundColor:props.note.color}}  className='note3'>
                     <Box className='noteicon2'>
                         <Box className='txt2'>
                             <span className='input3'> {props.note.title}</span>
@@ -87,7 +105,7 @@ export default function TakeNote3(props) {
                             <IconButton> <PersonAddAlt1OutlinedIcon style={{ color: '#202124' }} fontSize="small"/> </IconButton>
                         </Tooltip>
                         <Tooltip title='Color'>
-                            <IconButton> <ColorLensIcon style={{ color: '#202124' }} fontSize="small" /> </IconButton>
+                         <ColorPopper listenToColorPopper2 = {listenToColorPopper2} action="update"></ColorPopper>
                         </Tooltip>
                         <Tooltip title='Delete'>
                             <IconButton><DeleteIcon onClick={() => NoteTrash(props.note.noteID)} style={{ color: '#202124' }} fontSize="small" /></IconButton>

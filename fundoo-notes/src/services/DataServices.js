@@ -26,3 +26,7 @@ export const NotePinApi = (data) => {
     let response= axios.put(`${BaseUrl}/PinNote`, data ,HeaderConfig)
     return response
 }
+export const NoteColorApi = (data) => {
+    let response= axios.put(`${BaseUrl}/BackgroundColor`, data ,HeaderConfig)
+    return response
+}

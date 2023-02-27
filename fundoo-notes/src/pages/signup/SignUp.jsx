@@ -6,6 +6,8 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import './SignUp.css';
 import { SignUpApi } from '../../services/UserServices';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const nameRegex = /^([A-Z]{1}[a-z,A-Z]{2,})$/;
@@ -14,6 +16,9 @@ const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).
 
 
 function SignUp() {
+
+    let navigate = useNavigate();
+
     const [userSignup, setUserSignup] = useState({
 
         firstName: '',
@@ -93,6 +98,7 @@ function SignUp() {
             SignUpApi(userSignup)
             .then(response => {
                 console.log(response)
+                navigate('/')
             })
             .catch(error => {
                 console.log(error)
@@ -184,7 +190,8 @@ function SignUp() {
                             {/* <input type='checkbox' value='Show Password' name='Show Password' /> <label>Show Password</label> */}
                         </div>
                         <div className="signin">
-                            <a className="signininstead">Sign in instead</a>
+                            {/* <a className="signininstead">Sign in instead</a> */}
+                            <Button onClick={() => ('/')} className="signininstead" variant="text" sx={{ textTransform: 'none' }}>Sign in instead</Button>
                             <div className='next'>
                                 {/* <button className="nextbutton1">Next</button> */}
                                 <Button onClick={Submit} className="nextbutton1" variant="contained">Next</Button>

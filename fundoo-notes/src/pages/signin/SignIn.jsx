@@ -118,7 +118,7 @@ function SignIn() {
                 <div className="bottomTextLine2">Learn more.</div>
 
                 <div className="CreateAccountLogin">
-                    <a className="CreateAccountLink">Create Account</a>
+                    <Button onClick={() => navigate('/signup')} className="CreateAccountLink" variant="text" sx={{ textTransform: 'none' }}>Create Account</Button>
                     {/* <button className="LoginButton">Next</button> */}
                     <Button onClick={Submit} className="LoginButton" variant="contained">Next</Button>
                 </div>
