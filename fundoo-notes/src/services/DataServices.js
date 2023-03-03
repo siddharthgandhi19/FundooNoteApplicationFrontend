@@ -30,3 +30,7 @@ export const NoteColorApi = (data) => {
     let response= axios.put(`${BaseUrl}/BackgroundColor`, data ,HeaderConfig)
     return response
 }
+export const updateNoteAPI =(id, data) => {
+    let response= axios.put(`${BaseUrl}/NoteUpdate?NoteID=${id}`, data ,HeaderConfig)
+    return response
+}
