@@ -24,12 +24,13 @@ import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
+import { connect } from 'react-redux'; //HOC
 
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
-  marginTop : 68,
+  marginTop: 68,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -38,7 +39,7 @@ const openedMixin = (theme) => ({
 });
 
 const closedMixin = (theme) => ({
-    marginTop : 68,
+  marginTop: 68,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -94,25 +95,26 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Drawwer(props) {
-    const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-  
-    const handleDrawerOpen = () => {
-      setOpen(true);
-    };
-  
-    const handleDrawerClose = () => {
-      setOpen(false);
-    };
+function Drawwer(props) {
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
-    const noteTransfer1 =(val)=>{
-      props.noteTransfer(val)
-    }
-  
-    return (
-      <Box sx={{ display: 'flex' }}> 
-        {/* <AppBar position="fixed" open={open}  >
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  const noteTransfer1 = (val) => {
+    props.noteTransfer(val)
+    props.dispatch({ type: `${val}` }) //HOC // action perform value transfer // type transfer
+  }
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      {/* <AppBar position="fixed" open={open}  >
           <Toolbar>
             <IconButton
               color="inherit"
@@ -128,60 +130,62 @@ export default function Drawwer(props) {
             </IconButton>
           </Toolbar>
         </AppBar>  */}
-        <Drawer variant="permanent" open={props.drawerState}>
-          {/* <DrawerHeader>
+      <Drawer variant="permanent" open={props.drawerState}>
+        {/* <DrawerHeader>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
           </DrawerHeader>
           <Divider /> */}
-          <List>
-            {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => ( */}
-              <ListItem onClick={()=>noteTransfer1("Notes")} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton>
-                  <ListItemIcon>
-                    <LightbulbOutlinedIcon />
-                  </ListItemIcon>
-                  <ListItemText primary = "Notes" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem  onClick={()=>noteTransfer1("Reminders")} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton>
-                  <ListItemIcon>
-                  <AddAlertOutlinedIcon />
-                  </ListItemIcon>
-                  <ListItemText primary = "Reminders" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem  onClick={()=>noteTransfer1("Labels")} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton>
-                  <ListItemIcon>
-                  <LabelOutlinedIcon />
-                  </ListItemIcon>
-                  <ListItemText primary = "Edit Labels" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem onClick={()=>noteTransfer1("Archive")} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton>
-                  <ListItemIcon>
-                  <ArchiveOutlinedIcon />
-                  </ListItemIcon>
-                  <ListItemText   primary = "Archive" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem  onClick={()=>noteTransfer1("Trash")} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton>
-                  <ListItemIcon>
-                  <DeleteOutlinedIcon />
-                  </ListItemIcon>
-                  <ListItemText  primary = "Trash" />
-                </ListItemButton>
-              </ListItem>
-            {/* ))} */}
-          </List>
-          
-        </Drawer>
-       
-      </Box>
-    );
-  }
+        <List>
+          {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => ( */}
+          <ListItem onClick={() => noteTransfer1("Notes")} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton>
+              <ListItemIcon>
+                <LightbulbOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Notes" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem onClick={() => noteTransfer1("Reminders")} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton>
+              <ListItemIcon>
+                <AddAlertOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Reminders" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem onClick={() => noteTransfer1("Labels")} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton>
+              <ListItemIcon>
+                <LabelOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Edit Labels" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem onClick={() => noteTransfer1("Archive")} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton>
+              <ListItemIcon>
+                <ArchiveOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Archive" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem onClick={() => noteTransfer1("Trash")} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton>
+              <ListItemIcon>
+                <DeleteOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary="Trash" />
+            </ListItemButton>
+          </ListItem>
+          {/* ))} */}
+        </List>
+
+      </Drawer>
+
+    </Box>
+  );
+}
+
+export default connect() (Drawwer)
