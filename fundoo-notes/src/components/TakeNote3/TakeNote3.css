@@ -3,8 +3,9 @@
     flex-direction: column;
     flex-wrap: wrap;
     border: 0px solid black;
-    height: 23vh;
-    width: 20vw;
+    /* height: 23vh; */
+    height: auto;
+    width: auto;
     position: relative;
     justify-content: center;
     /* margin-right: 12px;
@@ -15,20 +16,23 @@
 }
 .note3 {
     width: 20vw;
-    height: 24vh;
+    height: auto;
+    /* height: 24vh; */
     /* border: solid red; */
 }
 .noteicon2 {
     display: flex;
     flex-direction: row;
-    height: 17vh;
+    height: auto;
+    /* height: 17vh; */
     /* border: solid blue; */
 
 }
 .txt2 {
     display: flex;
     flex-direction: column;
-    height: 15vh;
+    /* height: 15vh; */
+    height: auto;
     text-align: start;
     padding-left: 10px;
     padding-top: 10px;
@@ -37,8 +41,16 @@
 .input3 {
     display: flex;
     flex-direction: column;
-    height: 5vh;
+    height: auto;
     width: 15vw;
+    /* border: solid yellow; */
+}
+.input4 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 15vw;
+    padding-top: 10px;
     /* border: solid yellow; */
 }
 .icons3 {

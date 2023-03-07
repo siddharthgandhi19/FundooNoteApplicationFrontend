@@ -58,6 +58,7 @@ export default function TakeNote3(props) {
         NoteArchieveApi(nId)
             .then(res => {
                 console.log(res)
+                props.autoRefresh()
             })
             .catch(err => {
                 console.log(err)
@@ -72,6 +73,7 @@ export default function TakeNote3(props) {
         NoteTrashApi(nId)
             .then(res => {
                 console.log(res)
+                props.autoRefresh()
             })
             .catch(err => {
                 console.log(err)
@@ -154,7 +156,7 @@ export default function TakeNote3(props) {
                     <Box className='noteicon2'>
                         <Box className='txt2'>
                             <span className='input3' onClick={()=>handleOpen(props.note)} > {props.note.title}</span>
-                            <span className='input3' onClick={handleOpen}>  {props.note.description}</span>
+                            <span className='input4' onClick={handleOpen}>  {props.note.description}</span>
                             {/* <InputBase className='input3' placeholder="Title.."/>
                         <InputBase className='input3' placeholder="Take a note..." /> */}
                         </Box>
@@ -176,7 +178,7 @@ export default function TakeNote3(props) {
                             <ColorPopper listenToColorPopper2={listenToColorPopper2} action="update"></ColorPopper>
                         </Tooltip>
                         <Tooltip title='Delete'>
-                            <IconButton><DeleteIcon onClick={() => NoteTrash(props.note.noteID)} style={{ color: '#202124' }} fontSize="small" /></IconButton>
+                            <IconButton><DeleteIcon onClick={() => NoteTrash(props.note.noteID)}  style={{ color: '#202124' }} fontSize="small" /></IconButton>
                         </Tooltip>
                         <Tooltip title='Archive'>
                             <IconButton> <ArchiveOutlinedIcon onClick={() => NoteArchieve(props.note.noteID)} style={{ color: '#202124' }} fontSize="small" /> </IconButton>

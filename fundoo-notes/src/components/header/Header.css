@@ -1,10 +1,13 @@
 .HeaderMainContainer{
     width: 100vw;
     height: 10vh;
+    background-color: white;
     border: 1px solid lightgray;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    z-index: 10;
 }
 .sideheader{
 width: 10%;

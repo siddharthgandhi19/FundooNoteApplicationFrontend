@@ -12,11 +12,16 @@ import '../header/Header.css'
 
 
 
-function Header() {
+function Header(props) {
+
+    const DrawerFunction =()=>{
+        props.ListenToHeader()
+    }
+
     return (
         <div className="HeaderMainContainer">
             <div className="sideheader">
-                <Button><MenuIcon style={{ color: '#5f6368' }} /></Button>
+                <Button onClick={DrawerFunction}><MenuIcon style={{ color: '#5f6368' }}  /></Button>
                 <img width={50} className='keepLogo' src='https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png' />
                 <div className="keep">
                     FunDoo
