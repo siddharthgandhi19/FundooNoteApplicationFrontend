@@ -9,11 +9,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import React from 'react'
 import '../header/Header.css'
-import { connect } from 'react-redux' // hoc
 
 
 
-function Header(props) {
+
+export default function Header(props) {
 
     const DrawerFunction =()=>{
         props.ListenToHeader()
@@ -25,8 +25,7 @@ function Header(props) {
                 <Button onClick={DrawerFunction}><MenuIcon style={{ color: '#5f6368' }}  /></Button>
                 <img width={50} className='keepLogo' src='https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png' />
                 <div className="keep">
-                {props.val} 
-                {/* //FUndoo */}
+                Fundoo
                 </div>
             </div>
 
@@ -53,14 +52,3 @@ function Header(props) {
         </div>
     )
 }
-
-// export default Header
-const mapStateToProps = (state) => {
-    console.log(state)
-    return{
-        val : state.Reducer.title
-    }
-}
-
-export default connect(mapStateToProps) (Header)
-//export default connect(mapStateToProps) (Header)

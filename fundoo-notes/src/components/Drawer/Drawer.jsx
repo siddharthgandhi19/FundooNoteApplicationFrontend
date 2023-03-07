@@ -24,7 +24,7 @@ import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
-import { connect } from 'react-redux'; //HOC
+
 
 const drawerWidth = 240;
 
@@ -109,7 +109,7 @@ function Drawwer(props) {
 
   const noteTransfer1 = (val) => {
     props.noteTransfer(val)
-    props.dispatch({ type: `${val}` }) //HOC // action perform value transfer // type transfer
+   
   }
 
   return (
@@ -188,4 +188,4 @@ function Drawwer(props) {
   );
 }
 
-export default connect() (Drawwer)
+export default Drawwer
