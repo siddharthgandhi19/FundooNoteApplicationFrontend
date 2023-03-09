@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles'; // for method we write in {} braces
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -23,6 +23,8 @@ import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+
+import {connect} from 'react-redux'
 
 
 
@@ -109,7 +111,7 @@ function Drawwer(props) {
 
   const noteTransfer1 = (val) => {
     props.noteTransfer(val)
-   
+    props.dispatch({type:`${val}`})    
   }
 
   return (
@@ -188,4 +190,4 @@ function Drawwer(props) {
   );
 }
 
-export default Drawwer
+export default connect() (Drawwer)

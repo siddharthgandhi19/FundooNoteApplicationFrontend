@@ -10,14 +10,17 @@ import InputBase from '@mui/material/InputBase';
 import React from 'react'
 import '../header/Header.css'
 
+import { connect } from 'react-redux';
 
 
-
-export default function Header(props) {
+function Header(props) {
 
     const DrawerFunction =()=>{
         props.ListenToHeader()
+        
     }
+
+    console.log(props.label)
 
     return (
         <div className="HeaderMainContainer">
@@ -25,7 +28,7 @@ export default function Header(props) {
                 <Button onClick={DrawerFunction}><MenuIcon style={{ color: '#5f6368' }}  /></Button>
                 <img width={50} className='keepLogo' src='https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png' />
                 <div className="keep">
-                Fundoo
+                {props.label}
                 </div>
             </div>
 
@@ -52,3 +55,13 @@ export default function Header(props) {
         </div>
     )
 }
+
+const mapStateToProps =(state)=>{
+   console.log(state)
+
+   return{
+    label:state.DrawerReducer.value
+   }
+}
+
+export default connect(mapStateToProps)(Header)
